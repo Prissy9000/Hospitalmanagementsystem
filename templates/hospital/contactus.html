@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>P & M ||.com</title>
+  
+
+
+</head>
+
+<body>
+
+  {% include "hospital/navbar.html" %}
+  <br><br>
+
+  <center>
+    <h3 class='alert alert-success'>We'd love your feedback !</h3>
+    <p>Please know this email box is monitored during standard business hours.</p>
+
+    <form onsubmit="sendEmail(); reset(); return false;" method="POST">
+      <!-- Very Important csrf Token -->
+      {% csrf_token %}
+      <div class="form-group">
+        <p>
+        <h3>{{ form.as_p }}</h3>
+        </p>
+        <br>
+        <input type="submit" value="Send Message" class='btn btn-primary btn-lg'>
+      </div>
+    </form>
+    <p><b>Call Us  +233246658929
+    <br>
+    Medical Records: +233547648570<br>
+    Patient Financial Services: +233557893411<br>
+    P & M  Application Helpdesk: +233445830895 </b>
+    </p>
+   
+    
+  </center>
+  {% include "hospital/footer.html" %}
+</body>
+
+
+</html>
